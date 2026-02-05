@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="mb-8 md:mb-12">
+    <h1 class="text-5xl md:text-8xl font-black uppercase tracking-tighter mb-4">All Blog Posts</h1>
+    <p class="text-lg md:text-xl font-bold text-zinc-600">Insights, thoughts, and perspectives on technology and
+        education.</p>
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    {% for post in posts %}
+    <a href="/blog/{{ post.slug }}/" class="neo-card bg-white group cursor-pointer block">
+        <div class="aspect-video border-b-4 border-black overflow-hidden">
+            <img alt="{{ post.title }}"
+                loading="lazy"
+                class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNJxJo66l9TyClFW0ecA45wmqGxuWYaX4O9qEyPLvHUmWkLvcXCN1v9fEb2GfeIT3T7TII2PM7G2lQl3soTWLLt3YwvgTiUjQ4yzUF6C78gWhir5mdi8fXX4xJknyHs5QV-kdbzB_C6mEByaLkhMpRS9rJR0lX_2FIbe2kSwKi7qJl-zzCSWSZdBmrjcesPCvyS-TCjUTM0NZCL5F-Mh-wPuvvRaWUWC1Nmmcrde9-9Xdy8XTnYEjwadhSoSCC8n18DTd9xjFDnJ4" />
+        </div>
+        <div class="p-6">
+            <div class="flex gap-2 mb-4">
+                <span class="bg-secondary border-2 border-black px-2 py-0.5 text-xs font-black uppercase">{{ post.category }}</span>
+            </div>
+            <h3 class="text-2xl font-black uppercase mb-4 leading-none group-hover:text-primary transition-colors">
+                {{ post.title }}</h3>
+            <p class="font-medium text-zinc-700 mb-4">{{ post.summary }}</p>
+            <div class="flex items-center justify-between">
+                <span class="text-xs font-bold text-zinc-500">{{ post.date_published|date:"M d, Y" }}</span>
+                <span
+                    class="font-black uppercase text-sm underline decoration-2 underline-offset-4 group-hover:text-primary">Read
+                    More →</span>
+            </div>
+        </div>
+    </a>
+    {% empty %}
+    <div class="neo-card bg-white p-12 text-center col-span-full">
+        <p class="text-2xl font-bold text-zinc-400">No blog posts found.</p>
+    </div>
+    {% endfor %}
+</div>
+
+<!-- Pagination Controls -->
+{% if posts.has_other_pages %}
+<div class="mt-12 flex justify-center items-center gap-2">
+    {% if posts.has_previous %}
+    <a href="?page=1" class="neo-btn bg-white px-4 py-2 font-bold uppercase text-sm">
+        First
+    </a>
+    <a href="?page={{ posts.previous_page_number }}" class="neo-btn bg-white px-4 py-2 font-bold uppercase text-sm">
+        ← Prev
+    </a>
+    {% endif %}
+    
+    <span class="px-4 py-2 font-bold">
+        Page {{ posts.number }} of {{ posts.paginator.num_pages }}
+    </span>
+    
+    {% if posts.has_next %}
+    <a href="?page={{ posts.next_page_number }}" class="neo-btn bg-white px-4 py-2 font-bold uppercase text-sm">
+        Next →
+    </a>
+    <a href="?page={{ posts.paginator.num_pages }}" class="neo-btn bg-white px-4 py-2 font-bold uppercase text-sm">
+        Last
+    </a>
+    {% endif %}
+</div>
+{% endif %}
+
+<div class="mt-16 text-center">
+    <a href="/"
+        class="neo-btn bg-primary text-white px-8 py-4 font-black uppercase text-lg tracking-tighter inline-block">
+        Back to Home
+    </a>
+</div>
+{% endblock %}

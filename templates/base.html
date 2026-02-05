@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+{% load static %}
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>{% block title %}Arif Notes{% endblock %}</title>
+    <link rel="icon" type="image/svg+xml" href="{% static 'favicon.svg' %}" />
+    {% block meta %}
+    <meta name="description"
+        content="Personal notes and portfolio of Arif Setiawan, Informatics Education Lecturer at Universitas Muhammadiyah Surakarta.">
+    <meta name="keywords" content="Arif Setiawan, Informatics Education, Educational Technology, VR/AR, IoT, UMS">
+    <meta property="og:title" content="Arif Notes">
+    <meta property="og:description"
+        content="Empowering students through innovative educational technology at Universitas Muhammadiyah Surakarta.">
+    <meta property="og:type" content="website">
+    {% endblock %}
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0047FF",
+                        "secondary": "#00FF94",
+                        "background-light": "#F5F5F5",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"],
+                        "sans": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "9999px"
+                    },
+                    borderWidth: {
+                        '4': '4px',
+                        '8': '8px',
+                    },
+                    boxShadow: {
+                        'brutal': '8px 8px 0px 0px #000000',
+                        'brutal-sm': '4px 4px 0px 0px #000000',
+                        'brutal-lg': '12px 12px 0px 0px #000000',
+                    }
+                },
+            },
+        }
+    </script>
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-black dark:text-white antialiased">
+    <div class="layout-container flex h-full grow flex-col">
+        {% include 'header.html' %}
+
+        <main class="px-4 md:px-20 lg:px-40 flex flex-1 justify-center py-10">
+            <div class="layout-content-container flex flex-col max-w-[1200px] flex-1">
+                {% block content %}
+                {% endblock %}
+            </div>
+        </main>
+
+        {% include 'footer.html' %}
+    </div>
+
+</body>
+
+</html>

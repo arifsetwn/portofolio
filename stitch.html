@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Pak Arif | Lecturer Portfolio</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#135bec",
+                        "background-light": "#fafaf9",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .academic-serif {
+            font-family: 'Georgia', serif;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark text-[#111318] dark:text-gray-100 transition-colors duration-200">
+    <div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+        <div class="layout-container flex h-full grow flex-col">
+            <div
+                class="flex justify-center border-b border-solid border-[#e5e7eb] dark:border-gray-800 sticky top-0 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md z-50">
+                <div class="layout-content-container flex flex-col w-full max-w-[960px] px-4">
+                    <header class="flex items-center justify-between whitespace-nowrap py-4">
+                        <div class="flex items-center gap-3 text-primary">
+                            <div class="size-6">
+                                <svg fill="currentColor" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <h2 class="text-[#111318] dark:text-white text-xl font-bold tracking-tight">Pak Arif</h2>
+                        </div>
+                        <div class="flex flex-1 justify-end gap-8 items-center">
+                            <nav class="hidden md:flex items-center gap-8">
+                                <a class="text-[#111318] dark:text-gray-300 text-sm font-medium hover:text-primary transition-colors"
+                                    href="#">Home</a>
+                                <a class="text-[#111318] dark:text-gray-300 text-sm font-medium hover:text-primary transition-colors"
+                                    href="#interests">Research</a>
+                                <a class="text-[#111318] dark:text-gray-300 text-sm font-medium hover:text-primary transition-colors"
+                                    href="#publications">Publications</a>
+                                <a class="text-[#111318] dark:text-gray-300 text-sm font-medium hover:text-primary transition-colors"
+                                    href="#blog">Blog</a>
+                            </nav>
+                            <button
+                                class="flex min-w-[100px] cursor-pointer items-center justify-center rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold shadow-sm hover:bg-blue-700 transition-all">
+                                <span class="truncate">Download CV</span>
+                            </button>
+                        </div>
+                    </header>
+                </div>
+            </div>
+            <main class="flex-1 flex flex-col items-center">
+                <div class="w-full max-w-[960px] px-4 py-16 md:py-24">
+                    <div class="@container">
+                        <div class="flex flex-col gap-10 @[864px]:flex-row @[864px]:items-center">
+                            <div class="w-full @[864px]:w-1/2 aspect-[4/5] bg-center bg-no-repeat bg-cover rounded-xl shadow-xl grayscale hover:grayscale-0 transition-all duration-500"
+                                data-alt="Professional headshot of a male lecturer in business attire"
+                                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBAITjiCstFHN-i1rFKoy3ril5LnjjRckoZWviPRx0l0Nkbil8UQzVk3PEFAYYZuSZwN8OhpR2e-kj-mV_jQ3-spGUf5dQs_4srshARJM7f5RkdC7FNIpRro_x2_JwQDPIRfvJKBpaA6Q92nqGgWT8chCgfbJ-udXzdopcXYKkoPvV-KLmFui5ig6294vB4nw-F1wwr25r_V11YyYsB6bfQnbwCO4SxtkFtFQH35p0KYTxzoPZL6oD3sBlec5tk73bTpowSWclZzp4");'>
+                            </div>
+                            <div class="flex flex-col gap-8 w-full @[864px]:w-1/2">
+                                <div class="flex flex-col gap-4">
+                                    <h1
+                                        class="text-[#111318] dark:text-white text-5xl font-black leading-tight tracking-tight academic-serif">
+                                        Pak Arif
+                                    </h1>
+                                    <p
+                                        class="text-[#4b5563] dark:text-gray-400 text-lg leading-relaxed font-light italic">
+                                        Ph.D. in Information Systems
+                                    </p>
+                                    <h2
+                                        class="text-[#374151] dark:text-gray-300 text-base @[480px]:text-lg font-normal leading-relaxed">
+                                        Senior Lecturer &amp; Researcher specialized in Human-Computer Interaction. My
+                                        work explores the intersection of digital accessibility and pedagogical
+                                        innovation in higher education.
+                                    </h2>
+                                </div>
+                                <div class="flex gap-4">
+                                    <button
+                                        class="flex flex-1 md:flex-none min-w-[180px] cursor-pointer items-center justify-center rounded-lg h-12 px-6 bg-primary text-white text-base font-bold tracking-wide shadow-lg hover:translate-y-[-2px] transition-all">
+                                        <span class="truncate">Research Profile</span>
+                                    </button>
+                                    <button
+                                        class="flex flex-1 md:flex-none min-w-[140px] cursor-pointer items-center justify-center rounded-lg h-12 px-6 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-[#111318] dark:text-white text-base font-medium hover:bg-gray-50 transition-all">
+                                        <span class="truncate">Get in Touch</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <section class="w-full max-w-[960px] px-4 py-16 border-t border-gray-100 dark:border-gray-800"
+                    id="interests">
+                    <div class="mb-10 text-center md:text-left">
+                        <h2 class="text-[#111318] dark:text-white text-3xl font-bold academic-serif">Research Interests
+                        </h2>
+                        <p class="text-[#6b7280] dark:text-gray-400 mt-2">Core areas of investigation and academic
+                            focus.</p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div
+                            class="bg-white dark:bg-gray-800/40 p-8 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-primary/50 transition-all group">
+                            <div class="text-primary mb-6 transition-transform group-hover:scale-110 duration-300">
+                                <span class="material-symbols-outlined !text-4xl">devices</span>
+                            </div>
+                            <h3 class="text-[#111318] dark:text-white text-xl font-bold mb-3">Human-Computer Interaction
+                            </h3>
+                            <p class="text-[#6b7280] dark:text-gray-400 text-sm leading-relaxed">Exploring how people
+                                interact with technology and designing systems that enhance human capabilities and
+                                accessibility.</p>
+                        </div>
+                        <div
+                            class="bg-white dark:bg-gray-800/40 p-8 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-primary/50 transition-all group">
+                            <div class="text-primary mb-6 transition-transform group-hover:scale-110 duration-300">
+                                <span class="material-symbols-outlined !text-4xl">database</span>
+                            </div>
+                            <h3 class="text-[#111318] dark:text-white text-xl font-bold mb-3">Information Systems</h3>
+                            <p class="text-[#6b7280] dark:text-gray-400 text-sm leading-relaxed">Researching the
+                                management and strategy of information technology within organizational and social
+                                contexts.</p>
+                        </div>
+                        <div
+                            class="bg-white dark:bg-gray-800/40 p-8 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-primary/50 transition-all group">
+                            <div class="text-primary mb-6 transition-transform group-hover:scale-110 duration-300">
+                                <span class="material-symbols-outlined !text-4xl">school</span>
+                            </div>
+                            <h3 class="text-[#111318] dark:text-white text-xl font-bold mb-3">Pedagogical Innovation
+                            </h3>
+                            <p class="text-[#6b7280] dark:text-gray-400 text-sm leading-relaxed">Developing and
+                                evaluating new teaching methods and technologies to improve learning outcomes in higher
+                                education.</p>
+                        </div>
+                    </div>
+                </section>
+                <section class="w-full max-w-[960px] px-4 py-16 border-t border-gray-100 dark:border-gray-800"
+                    id="publications">
+                    <div class="flex items-center justify-between mb-8">
+                        <h2 class="text-[#111318] dark:text-white text-3xl font-bold academic-serif">Selected
+                            Publications</h2>
+                        <a class="text-primary text-sm font-semibold hover:underline decoration-2 underline-offset-4"
+                            href="#">View All Publications</a>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <div
+                            class="flex flex-col md:flex-row gap-4 bg-white dark:bg-gray-800/50 p-6 rounded-xl border border-transparent hover:border-gray-200 dark:hover:border-gray-700 hover:shadow-md transition-all">
+                            <div class="flex items-start gap-4 flex-1">
+                                <div
+                                    class="text-primary flex items-center justify-center rounded-lg bg-primary/10 shrink-0 size-12">
+                                    <span class="material-symbols-outlined">article</span>
+                                </div>
+                                <div class="flex flex-col gap-1">
+                                    <p class="text-[#111318] dark:text-white text-lg font-semibold leading-snug">The
+                                        Future of AI in Higher Education: Transformative Pedagogy</p>
+                                    <p class="text-[#6b7280] dark:text-gray-400 text-sm italic">A. Arif, J. Doe, S.
+                                        Smith (2023). International Journal of Educational Technology.</p>
+                                    <p class="text-primary text-xs font-mono mt-1">DOI: 10.1016/j.ijedtech.2023.01.004
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="shrink-0 flex items-center">
+                                <button
+                                    class="flex min-w-[120px] cursor-pointer items-center justify-center rounded-lg h-10 px-4 bg-gray-100 dark:bg-gray-700 text-[#111318] dark:text-white text-sm font-semibold hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">
+                                    <span>Read Paper</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div
+                            class="flex flex-col md:flex-row gap-4 bg-white dark:bg-gray-800/50 p-6 rounded-xl border border-transparent hover:border-gray-200 dark:hover:border-gray-700 hover:shadow-md transition-all">
+                            <div class="flex items-start gap-4 flex-1">
+                                <div
+                                    class="text-primary flex items-center justify-center rounded-lg bg-primary/10 shrink-0 size-12">
+                                    <span class="material-symbols-outlined">description</span>
+                                </div>
+                                <div class="flex flex-col gap-1">
+                                    <p class="text-[#111318] dark:text-white text-lg font-semibold leading-snug">
+                                        Human-Computer Interaction in Remote Learning Environments</p>
+                                    <p class="text-[#6b7280] dark:text-gray-400 text-sm italic">A. Arif, M. Johnson
+                                        (2022). ACM Transactions on Computer-Human Interaction.</p>
+                                    <p class="text-primary text-xs font-mono mt-1">DOI: 10.1145/3543501</p>
+                                </div>
+                            </div>
+                            <div class="shrink-0 flex items-center">
+                                <button
+                                    class="flex min-w-[120px] cursor-pointer items-center justify-center rounded-lg h-10 px-4 bg-gray-100 dark:bg-gray-700 text-[#111318] dark:text-white text-sm font-semibold hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">
+                                    <span>Read Paper</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div
+                            class="flex flex-col md:flex-row gap-4 bg-white dark:bg-gray-800/50 p-6 rounded-xl border border-transparent hover:border-gray-200 dark:hover:border-gray-700 hover:shadow-md transition-all">
+                            <div class="flex items-start gap-4 flex-1">
+                                <div
+                                    class="text-primary flex items-center justify-center rounded-lg bg-primary/10 shrink-0 size-12">
+                                    <span class="material-symbols-outlined">menu_book</span>
+                                </div>
+                                <div class="flex flex-col gap-1">
+                                    <p class="text-[#111318] dark:text-white text-lg font-semibold leading-snug">
+                                        Information Systems: A Modern Perspective on Data Governance</p>
+                                    <p class="text-[#6b7280] dark:text-gray-400 text-sm italic">K. Williams, A. Arif
+                                        (2021). Journal of Information Management.</p>
+                                    <p class="text-primary text-xs font-mono mt-1">DOI: 10.1017/jim.2021.088</p>
+                                </div>
+                            </div>
+                            <div class="shrink-0 flex items-center">
+                                <button
+                                    class="flex min-w-[120px] cursor-pointer items-center justify-center rounded-lg h-10 px-4 bg-gray-100 dark:bg-gray-700 text-[#111318] dark:text-white text-sm font-semibold hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">
+                                    <span>Read Paper</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="w-full max-w-[960px] px-4 py-16 border-t border-gray-100 dark:border-gray-800"
+                    id="blog">
+                    <h2 class="text-[#111318] dark:text-white text-3xl font-bold mb-8 academic-serif">Latest Blog Posts
+                    </h2>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div
+                            class="flex flex-col gap-4 p-6 bg-white dark:bg-gray-800 rounded-xl border border-gray-100 dark:border-gray-700 hover:shadow-lg transition-all">
+                            <div class="flex flex-col gap-2">
+                                <span class="text-primary text-xs font-bold uppercase tracking-widest">Education</span>
+                                <h3 class="text-[#111318] dark:text-white text-xl font-bold leading-tight">Navigating
+                                    the Semester with Hybrid Learning</h3>
+                                <p class="text-[#6b7280] dark:text-gray-400 text-sm line-clamp-3">Reflecting on the
+                                    challenges and successes of our recent pilot program for hybrid classroom
+                                    structures.</p>
+                            </div>
+                            <div class="mt-auto pt-4 flex items-center justify-between text-xs text-[#9ca3af]">
+                                <span>Oct 24, 2023</span>
+                                <a class="text-primary font-bold flex items-center gap-1 hover:underline" href="#">Read
+                                    More <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+                            </div>
+                        </div>
+                        <div
+                            class="flex flex-col gap-4 p-6 bg-white dark:bg-gray-800 rounded-xl border border-gray-100 dark:border-gray-700 hover:shadow-lg transition-all">
+                            <div class="flex flex-col gap-2">
+                                <span class="text-primary text-xs font-bold uppercase tracking-widest">Research</span>
+                                <h3 class="text-[#111318] dark:text-white text-xl font-bold leading-tight">Data Privacy
+                                    in Qualitative Research</h3>
+                                <p class="text-[#6b7280] dark:text-gray-400 text-sm line-clamp-3">A guide for doctoral
+                                    candidates on maintaining ethical standards in the age of big data analytics.</p>
+                            </div>
+                            <div class="mt-auto pt-4 flex items-center justify-between text-xs text-[#9ca3af]">
+                                <span>Sep 12, 2023</span>
+                                <a class="text-primary font-bold flex items-center gap-1 hover:underline" href="#">Read
+                                    More <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+                            </div>
+                        </div>
+                        <div
+                            class="flex flex-col gap-4 p-6 bg-white dark:bg-gray-800 rounded-xl border border-gray-100 dark:border-gray-700 hover:shadow-lg transition-all">
+                            <div class="flex flex-col gap-2">
+                                <span class="text-primary text-xs font-bold uppercase tracking-widest">Opinion</span>
+                                <h3 class="text-[#111318] dark:text-white text-xl font-bold leading-tight">Why HCI
+                                    Matters Now More Than Ever</h3>
+                                <p class="text-[#6b7280] dark:text-gray-400 text-sm line-clamp-3">As interfaces become
+                                    invisible, the ethics of interaction design become our most critical academic
+                                    pursuit.</p>
+                            </div>
+                            <div class="mt-auto pt-4 flex items-center justify-between text-xs text-[#9ca3af]">
+                                <span>Aug 05, 2023</span>
+                                <a class="text-primary font-bold flex items-center gap-1 hover:underline" href="#">Read
+                                    More <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="w-full max-w-[960px] px-4 py-20 mb-12" id="contact">
+                    <div
+                        class="bg-primary rounded-3xl p-10 md:p-16 flex flex-col items-center text-center gap-8 shadow-2xl">
+                        <div class="flex flex-col gap-4 text-white">
+                            <h2 class="text-4xl font-black academic-serif">Let's Collaborate</h2>
+                            <p class="max-w-xl text-blue-100 text-lg">Interested in research collaboration, speaking
+                                engagements, or academic consultation? I'm always open to discussing new ideas.</p>
+                        </div>
+                        <div class="flex flex-wrap justify-center gap-4">
+                            <a class="flex items-center gap-2 bg-white text-primary font-bold px-8 py-4 rounded-xl hover:scale-105 transition-transform shadow-lg"
+                                href="mailto:contact@pak-arif.edu">
+                                <span class="material-symbols-outlined">mail</span>
+                                contact@pak-arif.edu
+                            </a>
+                            <div class="flex gap-4">
+                                <a class="size-14 flex items-center justify-center rounded-xl bg-white/10 text-white hover:bg-white/20 transition-all border border-white/20"
+                                    href="#">
+                                    <span class="material-symbols-outlined">share</span>
+                                </a>
+                                <a class="size-14 flex items-center justify-center rounded-xl bg-white/10 text-white hover:bg-white/20 transition-all border border-white/20"
+                                    href="#">
+                                    <span class="material-symbols-outlined">school</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+            <footer class="flex justify-center py-12 border-t border-gray-200 dark:border-gray-800">
+                <div class="w-full max-w-[960px] px-4 flex flex-col md:flex-row justify-between items-center gap-6">
+                    <div class="flex flex-col items-center md:items-start gap-2">
+                        <p class="text-[#111318] dark:text-white font-bold text-lg">Pak Arif</p>
+                        <p class="text-[#6b7280] dark:text-gray-400 text-sm">© 2024 Portfolio. All Rights Reserved.</p>
+                    </div>
+                    <div class="flex gap-8">
+                        <a class="text-sm font-medium text-[#4b5563] dark:text-gray-400 hover:text-primary"
+                            href="#">Google Scholar</a>
+                        <a class="text-sm font-medium text-[#4b5563] dark:text-gray-400 hover:text-primary"
+                            href="#">LinkedIn</a>
+                        <a class="text-sm font-medium text-[#4b5563] dark:text-gray-400 hover:text-primary"
+                            href="#">ResearchGate</a>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+</body>
+
+</html>

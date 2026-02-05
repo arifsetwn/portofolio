@@ -1,0 +1,126 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="flex flex-col gap-12 lg:flex-row items-center">
+    <div class="w-full lg:w-1/2 order-2 lg:order-1 flex flex-col gap-8">
+        <div class="flex flex-col gap-4">
+            <span
+                class="bg-secondary text-black self-start px-4 py-1 border-2 border-black font-bold uppercase tracking-widest text-sm">Informatics Education Lecturer</span>
+            <h1 class="text-6xl md:text-6xl font-black leading-none tracking-tighter uppercase">
+                Arif Setiawan <br />
+            </h1>
+            <p class="text-xl md:text-2xl font-bold border-l-8 border-primary pl-6 mt-4">
+                "Empowering students through innovative educational technology. Bridging technical excellence with pedagogical impact at Universitas Muhammadiyah Surakarta."
+            </p>
+        </div>
+
+    </div>
+    <div class="w-full lg:w-1/3 order-1 lg:order-2">
+        <div class="relative max-w-sm mx-auto">
+            <div class="absolute inset-0 bg-secondary translate-x-4 translate-y-4 border-4 border-black">
+            </div>
+            <div class="relative border-4 border-black bg-white aspect-[4/5] overflow-hidden">
+                <img alt="{{ profile.name }} Portrait"
+                    class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
+                    src="{% static 'assets/profile.jpeg' %}" />
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="mt-32" id="interests">
+    <div class="flex items-center gap-4 mb-12">
+        <h2
+            class="text-5xl font-black uppercase tracking-tighter bg-primary text-white px-6 py-2 border-4 border-black">
+            Research Interests</h2>
+        <div class="h-1 flex-1 bg-black"></div>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="neo-card bg-white p-8 flex flex-col gap-6">
+            <div class="size-16 bg-secondary border-4 border-black flex items-center justify-center">
+                <span class="material-symbols-outlined text-4xl font-bold">smart_toy</span>
+            </div>
+            <div>
+                <h3 class="text-2xl font-black uppercase mb-2">Educational Technologies</h3>
+                <p class="text-lg font-medium leading-tight">Developing intelligent conversational agents to enhance learning experiences and provide personalized educational support.</p>
+            </div>
+        </div>
+        <div class="neo-card bg-white p-8 flex flex-col gap-6">
+            <div class="size-16 bg-primary border-4 border-black flex items-center justify-center">
+                <span class="material-symbols-outlined text-4xl font-bold text-white">view_in_ar</span>
+            </div>
+            <div>
+                <h3 class="text-2xl font-black uppercase mb-2">VR/AR in Education</h3>
+                <p class="text-lg font-medium leading-tight">Exploring immersive technologies to create engaging and interactive learning environments for complex concepts.</p>
+            </div>
+        </div>
+        <div class="neo-card bg-white p-8 flex flex-col gap-6">
+            <div class="size-16 bg-black border-4 border-black flex items-center justify-center">
+                <span class="material-symbols-outlined text-4xl font-bold text-white">sensors</span>
+            </div>
+            <div>
+                <h3 class="text-2xl font-black uppercase mb-2">Smart Learning Environment</h3>
+                <p class="text-lg font-medium leading-tight">Implementing technology to create intelligent, connected learning spaces that optimize educational outcomes.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="mt-32" id="publications">
+    <div class="flex items-center gap-4 mb-12">
+        <div class="h-1 flex-1 bg-black"></div>
+        <h2 class="text-5xl font-black uppercase tracking-tighter bg-white text-black px-6 py-2 border-4 border-black">
+            Publications</h2>
+    </div>
+    <div class="flex flex-col gap-4">
+        {% for pub in publications %}
+        <div
+            class="neo-card bg-white p-6 flex flex-col md:flex-row justify-between items-start md:items-center gap-4 group">
+            <div class="flex gap-6 items-center">
+                <span class="text-4xl font-black text-zinc-300 group-hover:text-primary transition-colors">{{ forloop.counter|stringformat:"02d" }}</span>
+                <div>
+                    <h4 class="text-xl font-black uppercase">{{ pub.title }}</h4>
+                    <p class="font-bold text-zinc-600">{{ pub.journal }}, {{ pub.year }}</p>
+                </div>
+            </div>
+            <a href="{% if pub.link %}{{ pub.link }}{% else %}#{% endif %}"
+                class="neo-btn bg-black text-white px-6 py-2 font-black uppercase text-sm tracking-widest whitespace-nowrap">
+                Read Paper
+            </a>
+        </div>
+        {% empty %}
+        <p class="text-xl font-bold">No publications found.</p>
+        {% endfor %}
+    </div>
+</section>
+<section class="mt-32 mb-20" id="blog">
+    <div class="flex items-center gap-4 mb-12">
+        <h2
+            class="text-5xl font-black uppercase tracking-tighter bg-secondary text-black px-6 py-2 border-4 border-black">
+            Latest Blog</h2>
+        <div class="h-1 flex-1 bg-black"></div>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {% for post in posts|slice:":3" %}
+        <a href="/blog/{{ post.slug }}/" class="neo-card bg-white group cursor-pointer block">
+            <div class="aspect-video border-b-4 border-black overflow-hidden">
+                <img alt="Blog Post Image"
+                    class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNJxJo66l9TyClFW0ecA45wmqGxuWYaX4O9qEyPLvHUmWkLvcXCN1v9fEb2GfeIT3T7TII2PM7G2lQl3soTWLLt3YwvgTiUjQ4yzUF6C78gWhir5mdi8fXX4xJknyHs5QV-kdbzB_C6mEByaLkhMpRS9rJR0lX_2FIbe2kSwKi7qJl-zzCSWSZdBmrjcesPCvyS-TCjUTM0NZCL5F-Mh-wPuvvRaWUWC1Nmmcrde9-9Xdy8XTnYEjwadhSoSCC8n18DTd9xjFDnJ4" />
+            </div>
+            <div class="p-6">
+                <div class="flex gap-2 mb-4">
+                    <span class="bg-secondary border-2 border-black px-2 py-0.5 text-xs font-black uppercase">{{ post.category }}</span>
+                </div>
+                <h3 class="text-2xl font-black uppercase mb-4 leading-none group-hover:text-primary transition-colors">
+                    {{ post.title }}</h3>
+                <p class="font-medium text-zinc-700 mb-6">{{ post.summary|truncatewords:20 }}</p>
+                <span
+                    class="font-black uppercase text-sm underline decoration-2 underline-offset-4 group-hover:text-primary">Read
+                    More →</span>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="mb-8 md:mb-12">
+    <h1 class="text-5xl md:text-8xl font-black uppercase tracking-tighter mb-4 break-words">All Publications</h1>
+    <p class="text-lg md:text-xl font-bold text-zinc-600">Complete list of research papers and academic
+        publications.</p>
+</div>
+
+<div class="flex flex-col gap-4">
+    {% for pub in publications %}
+    <div
+        class="neo-card bg-white p-6 flex flex-col md:flex-row justify-between items-start md:items-center gap-4 group">
+        <div class="flex gap-4 md:gap-6 items-center flex-1 w-full">
+            <span class="text-3xl md:text-4xl font-black text-zinc-300 group-hover:text-primary transition-colors">{{ forloop.counter|stringformat:"02d" }}</span>
+            <div class="flex-1 min-w-0">
+                <h4 class="text-lg md:text-xl font-black uppercase mb-2 break-words">{{ pub.title }}</h4>
+                <p class="font-bold text-zinc-600 mb-1 text-sm md:text-base">{{ pub.authors }}</p>
+                <p class="font-bold text-zinc-500 text-sm">{{ pub.journal }}, {{ pub.year }}</p>
+                {% if pub.doi %}
+                <p class="text-primary text-xs font-mono mt-2 break-all">DOI: {{ pub.doi }}</p>
+                {% endif %}
+            </div>
+        </div>
+        <a href="{% if pub.link %}{{ pub.link }}{% else %}#{% endif %}"
+            class="neo-btn bg-black text-white px-6 py-2 font-black uppercase text-sm tracking-widest whitespace-nowrap w-full md:w-auto text-center">
+            Read Paper
+        </a>
+    </div>
+    {% empty %}
+    <div class="neo-card bg-white p-12 text-center">
+        <p class="text-2xl font-bold text-zinc-400">No publications found.</p>
+    </div>
+    {% endfor %}
+</div>
+
+<div class="mt-16 text-center">
+    <a href="/"
+        class="neo-btn bg-primary text-white px-8 py-4 font-black uppercase text-lg tracking-tighter inline-block">
+        Back to Home
+    </a>
+</div>
+{% endblock %}

@@ -1,0 +1,28 @@
+<div class="sticky top-0 z-50 px-4 md:px-20 lg:px-40 py-5 bg-background-light dark:bg-background-dark">
+    <header
+        class="flex flex-col md:flex-row items-center justify-between bg-white dark:bg-zinc-900 border-4 border-black px-6 py-4 shadow-brutal gap-4 md:gap-0">
+        <div class="flex items-center gap-4 text-black dark:text-white w-full md:w-auto justify-between">
+            <div class="flex items-center gap-4">
+                <div class="size-8 bg-primary border-2 border-black flex items-center justify-center">
+                    <span class="material-symbols-outlined text-white text-base">terminal</span>
+                </div>
+                <h2 class="text-2xl font-black uppercase tracking-tighter">{{ profile.name|default:"Pak Arif" }}
+                </h2>
+            </div>
+            <!-- Mobile Menu Button (Optional, can just stack for now) -->
+        </div>
+        <div class="flex flex-col md:flex-row w-full md:w-auto gap-4 md:gap-8 items-center text-center">
+            <div
+                class="flex flex-col md:flex-row items-center gap-4 md:gap-9 uppercase font-bold text-sm tracking-widest">
+                <a class="hover:underline decoration-4 decoration-primary underline-offset-4" href="/">Home</a>
+                <a class="hover:underline decoration-4 decoration-primary underline-offset-4"
+                    href="/publications">Publications</a>
+                <a class="hover:underline decoration-4 decoration-primary underline-offset-4" href="/blog">Blog</a>
+            </div>
+            <a href="mailto:as112@ums.ac.id"
+                class="neo-btn bg-primary text-white px-6 py-2 font-black uppercase text-sm tracking-widest w-full md:w-auto">
+                Contact Me
+            </a>
+        </div>
+    </header>
+</div>
