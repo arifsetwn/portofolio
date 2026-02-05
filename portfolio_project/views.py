@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.views.decorators.cache import cache_page
+from django.http import HttpResponse
 from research.models import Publication
 from blog.models import Post
 from biography.models import Profile
@@ -29,6 +30,14 @@ def publications_list(request):
     }
     return render(request, 'publications.html', context)
 
+def about(request):
+    profile = Profile.objects.first()
+    
+    context = {
+        'profile': profile,
+    }
+    return render(request, 'about.html', context)
+
 @cache_page(60 * 15)  # Cache selama 15 menit
 def blog_list(request):
     posts_list = Post.objects.all().only('slug', 'category', 'title', 'summary', 'date_published')
@@ -50,8 +59,6 @@ def blog_list(request):
         'profile': profile,
     }
     return render(request, 'blog.html', context)
-
-from django.http import HttpResponse
 
 def blog_detail(request, slug):
     post = get_object_or_404(Post, slug=slug)

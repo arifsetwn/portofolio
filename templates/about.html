@@ -1,0 +1,137 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}About - Arif Notes{% endblock %}
+
+{% block content %}
+<div class="mb-8 md:mb-12">
+    <h1 class="text-5xl md:text-8xl font-black uppercase tracking-tighter mb-4">About Me</h1>
+    <p class="text-lg md:text-xl font-bold text-zinc-600">Assistant Professor at Universitas Muhammadiyah Surakarta</p>
+</div>
+
+<!-- Profile Section -->
+<div class="flex flex-col lg:flex-row gap-12 mb-16">
+    <div class="lg:w-1/3">
+        <div class="neo-card bg-white p-0 overflow-hidden">
+            <div class="aspect-[4/5] overflow-hidden">
+                <img alt="Arif Setiawan"
+                    class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
+                    src="{% static 'assets/profile.jpeg' %}" />
+            </div>
+            <div class="p-6 border-t-4 border-black">
+                <h2 class="text-2xl font-black uppercase mb-2">Arif Setiawan</h2>
+                <p class="text-lg font-bold text-primary mb-4">Assistant Professor</p>
+                <p class="font-bold text-zinc-600">Universitas Muhammadiyah Surakarta</p>
+                <div class="mt-6 flex gap-3">
+                    <a href="mailto:as112@ums.ac.id" 
+                        class="neo-btn bg-primary text-white px-4 py-2 font-bold uppercase text-sm flex-1 text-center">
+                        Email
+                    </a>
+                    <a href="https://www.ums.ac.id/en/profile/arif-setiawan" target="_blank" rel="noopener noreferrer"
+                        class="neo-btn bg-secondary text-black px-4 py-2 font-bold uppercase text-sm flex-1 text-center">
+                        UMS Profile
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="lg:w-2/3 flex flex-col gap-8">
+        <!-- Introduction -->
+        <div class="neo-card bg-white p-8">
+            <div class="flex items-center gap-3 mb-6">
+                <div class="size-12 bg-primary border-4 border-black flex items-center justify-center">
+                    <span class="material-symbols-outlined text-white text-2xl">waving_hand</span>
+                </div>
+                <h3 class="text-3xl font-black uppercase">Hi 👋</h3>
+            </div>
+            <div class="space-y-4 text-lg font-medium leading-relaxed">
+                <p>
+                    I am a lecturer in Informatics Education at Universitas Muhammadiyah Surakarta, focusing on learning development, research, and innovation in educational technology. As an educator, I teach various courses ranging from Algorithms, Web Programming to Mobile Application Development. I believe that technology should serve as a powerful tool to empower students and enhance the learning process.
+                </p>
+                <p>
+                    In my research, I explore the use of technology in education, including Chatbots, Virtual Reality and Augmented Reality, E-Learning, and the implementation of IoT systems for Smart Classrooms. I am passionate about integrating technical and pedagogical aspects to create practical solutions that bring real benefits to universities and partner schools. I am also actively involved in supervising undergraduate theses and mentoring student organizations and extracurricular activities, as I believe that informatics education is not only about theory and code but also about leadership, creativity, and collaboration.
+                </p>
+            </div>
+        </div>
+
+        <!-- Teaching -->
+        <div class="neo-card bg-secondary p-8 border-4 border-black">
+            <div class="flex items-center gap-3 mb-6">
+                <div class="size-12 bg-black border-4 border-black flex items-center justify-center">
+                    <span class="material-symbols-outlined text-white text-2xl">school</span>
+                </div>
+                <h3 class="text-3xl font-black uppercase">Teaching</h3>
+            </div>
+            <div class="space-y-4 text-lg font-medium leading-relaxed">
+                <p>
+                    Currently, I teach and supervise courses in Informatics Education that focus on programming, web development, mobile application development, and technology-enhanced learning. My teaching approach emphasizes both technical mastery and pedagogical understanding, encouraging students to create meaningful digital solutions that address real educational needs.
+                </p>
+                <p>
+                    I also have experience teaching subjects such as E-Learning Design and Development, Multimedia, Game Programming, and Human–Computer Interaction. In addition to classroom teaching, I actively guide students through research projects and final theses, particularly in areas involving AI-based learning tools, IoT applications, and educational innovation.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Research Interests -->
+<section class="mb-16">
+    <div class="flex items-center gap-4 mb-8">
+        <h2 class="text-4xl font-black uppercase tracking-tighter bg-primary text-white px-6 py-2 border-4 border-black">
+            Research Focus</h2>
+        <div class="h-1 flex-1 bg-black"></div>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="neo-card bg-white p-6">
+            <div class="size-12 bg-secondary border-4 border-black flex items-center justify-center mb-4">
+                <span class="material-symbols-outlined text-2xl font-bold">smart_toy</span>
+            </div>
+            <h4 class="text-xl font-black uppercase mb-2">Educational Chatbots & AI</h4>
+            <p class="font-medium text-zinc-700">Intelligent conversational agents for personalized learning experiences</p>
+        </div>
+        <div class="neo-card bg-white p-6">
+            <div class="size-12 bg-primary border-4 border-black flex items-center justify-center mb-4">
+                <span class="material-symbols-outlined text-2xl font-bold text-white">view_in_ar</span>
+            </div>
+            <h4 class="text-xl font-black uppercase mb-2">VR/AR in Education</h4>
+            <p class="font-medium text-zinc-700">Immersive technologies for engaging interactive learning environments</p>
+        </div>
+        <div class="neo-card bg-white p-6">
+            <div class="size-12 bg-black border-4 border-black flex items-center justify-center mb-4">
+                <span class="material-symbols-outlined text-2xl font-bold text-white">sensors</span>
+            </div>
+            <h4 class="text-xl font-black uppercase mb-2">Smart Classroom IoT</h4>
+            <p class="font-medium text-zinc-700">Internet of Things systems for intelligent connected learning spaces</p>
+        </div>
+        <div class="neo-card bg-white p-6">
+            <div class="size-12 bg-secondary border-4 border-black flex items-center justify-center mb-4">
+                <span class="material-symbols-outlined text-2xl font-bold">computer</span>
+            </div>
+            <h4 class="text-xl font-black uppercase mb-2">E-Learning Systems</h4>
+            <p class="font-medium text-zinc-700">Technology-enhanced learning platforms and digital education tools</p>
+        </div>
+        <div class="neo-card bg-white p-6">
+            <div class="size-12 bg-primary border-4 border-black flex items-center justify-center mb-4">
+                <span class="material-symbols-outlined text-2xl font-bold text-white">videogame_asset</span>
+            </div>
+            <h4 class="text-xl font-black uppercase mb-2">Game Programming</h4>
+            <p class="font-medium text-zinc-700">Educational game development and gamification in learning</p>
+        </div>
+        <div class="neo-card bg-white p-6">
+            <div class="size-12 bg-black border-4 border-black flex items-center justify-center mb-4">
+                <span class="material-symbols-outlined text-2xl font-bold text-white">touch_app</span>
+            </div>
+            <h4 class="text-xl font-black uppercase mb-2">Human-Computer Interaction</h4>
+            <p class="font-medium text-zinc-700">User experience design for educational applications</p>
+        </div>
+    </div>
+</section>
+
+<!-- Back Button -->
+<div class="text-center mt-16">
+    <a href="/" class="neo-btn bg-primary text-white px-8 py-4 font-black uppercase text-lg tracking-tighter inline-block">
+        Back to Home
+    </a>
+</div>
+{% endblock %}

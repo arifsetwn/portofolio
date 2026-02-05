@@ -29,6 +29,7 @@ sitemaps = {
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", views.index, name="index"),
+    path("about/", views.about, name="about"),
     path("publications/", views.publications_list, name="publications"),
     path("blog/", views.blog_list, name="blog"),
     path("blog/<slug:slug>/", views.blog_detail, name="blog_detail"),
