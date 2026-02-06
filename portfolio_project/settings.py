@@ -56,6 +56,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "django.contrib.sites",
     "django.contrib.sitemaps",
+    "tinymce",
     "biography",
     "research",
     "blog",
@@ -181,6 +182,21 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # Media files
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# TinyMCE Configuration
+TINYMCE_DEFAULT_CONFIG = {
+    'height': 500,
+    'width': '100%',
+    'menubar': True,
+    'plugins': 'advlist autolink lists link image charmap print preview anchor '
+               'searchreplace visualblocks code fullscreen '
+               'insertdatetime media table paste code help wordcount',
+    'toolbar': 'undo redo | formatselect | '
+               'bold italic backcolor | alignleft aligncenter '
+               'alignright alignjustify | bullist numlist outdent indent | '
+               'removeformat | help',
+    'content_css': '/static/css/styles.css',
+}
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field

@@ -16,8 +16,10 @@ Including another URLconf
 """
 
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from . import views
+from django.conf import settings
+from django.conf.urls.static import static
 
 from django.contrib.sitemaps.views import sitemap
 from blog.sitemaps import BlogSitemap
@@ -28,6 +30,7 @@ sitemaps = {
 
 urlpatterns = [
     path("admin/", admin.site.urls),
+    path("tinymce/", include('tinymce.urls')),
     path("", views.index, name="index"),
     path("about/", views.about, name="about"),
     path("publications/", views.publications_list, name="publications"),
@@ -36,3 +39,7 @@ urlpatterns = [
     path("sitemap.xml", sitemap, {"sitemaps": sitemaps}, name="django.contrib.sitemaps.views.sitemap"),
     path("robots.txt", views.robots_txt, name="robots_txt"),
 ]
+
+# Serve media files in development
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

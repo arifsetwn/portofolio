@@ -14,7 +14,7 @@
             <img alt="{{ post.title }}"
                 loading="lazy"
                 class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNJxJo66l9TyClFW0ecA45wmqGxuWYaX4O9qEyPLvHUmWkLvcXCN1v9fEb2GfeIT3T7TII2PM7G2lQl3soTWLLt3YwvgTiUjQ4yzUF6C78gWhir5mdi8fXX4xJknyHs5QV-kdbzB_C6mEByaLkhMpRS9rJR0lX_2FIbe2kSwKi7qJl-zzCSWSZdBmrjcesPCvyS-TCjUTM0NZCL5F-Mh-wPuvvRaWUWC1Nmmcrde9-9Xdy8XTnYEjwadhSoSCC8n18DTd9xjFDnJ4" />
+                src="{% if post.image %}{{ post.image.url }}{% else %}https://placehold.co/600x400/e5e5e5/666666?text=No+Image{% endif %}" />
         </div>
         <div class="p-6">
             <div class="flex gap-2 mb-4">

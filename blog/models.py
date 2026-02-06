@@ -10,6 +10,7 @@ class Post(models.Model):
     title = models.CharField(max_length=255)
     slug = models.SlugField(max_length=255, unique=True, blank=True, null=True)
     category = models.CharField(max_length=50, choices=CATEGORY_CHOICES, default='Education')
+    image = models.ImageField(upload_to='blog_images/', blank=True, null=True, help_text="Gambar untuk blog post")
     content = models.TextField()
     date_published = models.DateField(auto_now_add=True)
     summary = models.TextField(help_text="Short description for the card")
