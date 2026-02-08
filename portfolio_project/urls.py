@@ -16,10 +16,11 @@ Including another URLconf
 """
 
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path, include, re_path
 from . import views
 from django.conf import settings
 from django.conf.urls.static import static
+from django.views.static import serve
 
 from django.contrib.sitemaps.views import sitemap
 from blog.sitemaps import BlogSitemap
@@ -40,6 +41,13 @@ urlpatterns = [
     path("robots.txt", views.robots_txt, name="robots_txt"),
 ]
 
-# Serve media files (development and production)
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+# Serve media files in both development and production
+urlpatterns += [
+    re_path(r'^media/(?P<path>.*)$', serve, {
+        'document_root': settings.MEDIA_ROOT,
+    }),
+]
+
+# Serve static files (only needed in development, WhiteNoise handles production)
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
