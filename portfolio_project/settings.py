@@ -184,9 +184,7 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # TinyMCE Configuration
-TINYMCE_JS_URL = 'https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js'  # Using CDN for reliability
-TINYMCE_COMPRESSOR = False
-
+# Using self-hosted version from django-tinymce package (no API key needed)
 TINYMCE_DEFAULT_CONFIG = {
     'height': 500,
     'width': '100%',
