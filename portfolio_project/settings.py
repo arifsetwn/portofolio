@@ -183,6 +183,11 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+# Serve media files with WhiteNoise in production
+if not DEBUG:
+    # WhiteNoise akan serve media files juga
+    WHITENOISE_ROOT = MEDIA_ROOT
+
 # TinyMCE Configuration
 TINYMCE_DEFAULT_CONFIG = {
     'height': 500,

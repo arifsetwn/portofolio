@@ -23,8 +23,10 @@ RUN pip install --upgrade pip && \
 # Copy project files
 COPY . /app/
 
-# Create necessary directories
-RUN mkdir -p /app/staticfiles /app/media
+# Create necessary directories with proper permissions
+RUN mkdir -p /app/staticfiles /app/media/blog_images && \
+    chmod -R 755 /app/staticfiles && \
+    chmod -R 777 /app/media
 
 # Collect static files
 RUN python manage.py collectstatic --noinput || true
