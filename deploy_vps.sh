@@ -40,9 +40,13 @@ docker compose -f docker-compose.prod.yml exec -T web python manage.py migrate -
 echo "📦 Collecting static files..."
 docker compose -f docker-compose.prod.yml exec -T web python manage.py collectstatic --noinput --clear
 
+# Verify TinyMCE installation
+echo "🔍 Verifying TinyMCE..."
+docker compose -f docker-compose.prod.yml exec -T web python -c "import tinymce; print('TinyMCE version:', tinymce.__version__)" && echo "✅ TinyMCE installed!" || echo "❌ TinyMCE not found!"
+
 # Check if TinyMCE static files exist
-echo "🔍 Checking TinyMCE files..."
-docker compose -f docker-compose.prod.yml exec -T web ls -la /app/staticfiles/tinymce 2>/dev/null && echo "✅ TinyMCE files found!" || echo "⚠️  TinyMCE files not found!"
+echo "🔍 Checking TinyMCE static files..."
+docker compose -f docker-compose.prod.yml exec -T web ls -la /app/staticfiles/tinymce 2>/dev/null && echo "✅ TinyMCE static files found!" || echo "⚠️  Using CDN for TinyMCE"
 
 # Create superuser if needed (commented out by default)
 # echo "👤 Creating superuser..."

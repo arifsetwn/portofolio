@@ -183,24 +183,26 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-# Serve media files with WhiteNoise in production
-if not DEBUG:
-    # WhiteNoise akan serve media files juga
-    WHITENOISE_ROOT = MEDIA_ROOT
-
 # TinyMCE Configuration
+TINYMCE_JS_URL = 'https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js'  # Using CDN for reliability
+TINYMCE_COMPRESSOR = False
+
 TINYMCE_DEFAULT_CONFIG = {
     'height': 500,
     'width': '100%',
     'menubar': True,
-    'plugins': 'advlist autolink lists link image charmap print preview anchor '
+    'plugins': 'advlist autolink lists link image charmap preview anchor '
                'searchreplace visualblocks code fullscreen '
-               'insertdatetime media table paste code help wordcount',
+               'insertdatetime media table help wordcount',
     'toolbar': 'undo redo | formatselect | '
-               'bold italic backcolor | alignleft aligncenter '
-               'alignright alignjustify | bullist numlist outdent indent | '
-               'removeformat | help',
+               'bold italic underline strikethrough | forecolor backcolor | '
+               'alignleft aligncenter alignright alignjustify | '
+               'bullist numlist outdent indent | '
+               'link image media | code preview | removeformat | help',
     'content_css': '/static/css/styles.css',
+    'relative_urls': False,
+    'remove_script_host': False,
+    'convert_urls': True,
 }
 
 # Default primary key field type
