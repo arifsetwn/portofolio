@@ -1,0 +1,12 @@
+/*
+Theme Name: Portofolio
+Theme URI: https://github.com/arifsetwn/portofolio
+Author: Arif Setiawan (Converted by AI)
+Author URI: https://github.com/arifsetwn
+Description: A Neo-brutalism portfolio theme converted from Django.
+Version: 1.0.0
+License: MIT
+Text Domain: portofolio
+*/
+
+/* Tailwind CSS is loaded from the CDN in the header and custom styles are enqueued from css/styles.css */

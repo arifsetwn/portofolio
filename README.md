@@ -23,6 +23,15 @@ Neo-brutalism styled portfolio website for Arif Setiawan, Informatics Education 
 - **Caching:** Django Local Memory Cache
 - **Python:** 3.10+
 
+## 🎨 WordPress Theme Version
+
+A WordPress theme version of this portfolio is also available in the `wp-content/themes/portofolio/` directory. The theme maintains the same neo-brutalism design aesthetic and features:
+
+- Custom post types for publications
+- Responsive design with the same visual style
+- Blog functionality with WordPress native features
+- Easy customization through WordPress admin panel
+
 ## 📧 Contact
 
 **Arif Setiawan**  

@@ -1,0 +1,68 @@
+            </div>
+        </main>
+
+        <footer class="border-t-8 border-black pt-12 pb-20 px-4 md:px-20 lg:px-40">
+            <div class="max-w-[1200px] mx-auto flex flex-col md:flex-row justify-between items-start gap-12">
+                <div class="flex flex-col gap-6">
+                    <div class="flex items-center gap-4 text-black">
+                        <div class="size-10 bg-primary border-2 border-black flex items-center justify-center">
+                            <span class="material-symbols-outlined text-white">terminal</span>
+                        </div>
+                        <h2 class="text-3xl font-black uppercase tracking-tighter"><?php echo esc_html( get_bloginfo( 'name' ) ? get_bloginfo( 'name' ) : 'Pak Arif' ); ?></h2>
+                    </div>
+                    <p class="max-w-xs font-bold text-lg">
+                        <?php echo esc_html( get_bloginfo( 'description' ) ? get_bloginfo( 'description' ) : 'Educating the next generation of thinkers. Building a more human digital future.' ); ?>
+                    </p>
+                    <div class="flex gap-4">
+                        <a class="size-12 bg-white border-4 border-black flex items-center justify-center neo-btn hover:bg-primary hover:text-white"
+                            href="mailto:as112@ums.ac.id">
+                            <span class="material-symbols-outlined font-black">mail</span>
+                        </a>
+                        <a class="size-12 bg-white border-4 border-black flex items-center justify-center neo-btn hover:bg-primary hover:text-white"
+                            href="https://www.ums.ac.id/en/profile/arif-setiawan" target="_blank" rel="noopener noreferrer">
+                            <span class="material-symbols-outlined font-black">school</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-20">
+                    <div class="flex flex-col gap-4">
+                        <h4 class="font-black uppercase tracking-widest text-sm text-primary">Navigation</h4>
+                        <ul class="flex flex-col gap-2 font-bold uppercase text-sm">
+                            <li><a class="hover:underline decoration-secondary decoration-2 underline-offset-4"
+                                    href="<?php echo esc_url( home_url( '/about/' ) ); ?>">About</a>
+                            </li>
+                            <li><a class="hover:underline decoration-secondary decoration-2 underline-offset-4"
+                                    href="<?php echo esc_url( home_url( '/#interests' ) ); ?>">Research</a></li>
+                            <li><a class="hover:underline decoration-secondary decoration-2 underline-offset-4"
+                                    href="<?php echo esc_url( get_permalink( get_option('page_for_posts') ) ?: home_url('/blog/') ); ?>">Blog</a></li>
+                            <li><a class="hover:underline decoration-secondary decoration-2 underline-offset-4"
+                                    href="mailto:as112@ums.ac.id">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="flex flex-col gap-4">
+                        <h4 class="font-black uppercase tracking-widest text-sm text-primary">Resources</h4>
+                        <ul class="flex flex-col gap-2 font-bold uppercase text-sm">
+                            <li><a class="hover:underline decoration-secondary decoration-2 underline-offset-4"
+                                    href="https://sinta.kemdiktisaintek.go.id/authors/profile/6680490" target="_blank" rel="noopener noreferrer">Sinta ID</a></li>
+                            <li><a class="hover:underline decoration-secondary decoration-2 underline-offset-4" 
+                                    href="https://www.scopus.com/authid/detail.uri?authorId=58390404800" target="_blank" rel="noopener noreferrer">Scopus ID</a></li>
+                            <li><a class="hover:underline decoration-secondary decoration-2 underline-offset-4"
+                                    href="https://scholar.google.com/citations?user=l1JmHE8AAAAJ&hl=id&authuser=1" target="_blank" rel="noopener noreferrer">GScholar</a></li>
+                            <li><a class="hover:underline decoration-secondary decoration-2 underline-offset-4"
+                                    href="https://www.linkedin.com/in/arifsetiawan90/" target="_blank" rel="noopener noreferrer">Linkedin</a></li>
+                            <li><a class="hover:underline decoration-secondary decoration-2 underline-offset-4"
+                                    href="https://www.ums.ac.id/en/profile/arif-setiawan" target="_blank" rel="noopener noreferrer">UMS Profile</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <div class="pb-10 text-center px-4 md:px-20 lg:px-40">
+            <div class="max-w-[1200px] mx-auto">
+                <p class="font-black uppercase text-xs tracking-[0.3em]">&copy; <?php echo date('Y'); ?> <?php echo esc_html( get_bloginfo( 'name' ) ? get_bloginfo( 'name' ) : 'Pak Arif' ); ?> — Made with 🩷.</p>
+            </div>
+        </div>
+    </div>
+    <?php wp_footer(); ?>
+</body>
+</html>

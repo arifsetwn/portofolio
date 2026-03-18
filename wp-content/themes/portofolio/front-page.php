@@ -1,14 +1,12 @@
-{% extends 'base.html' %}
-{% load static %}
+<?php get_header(); ?>
 
-{% block content %}
 <div class="flex flex-col gap-12 lg:flex-row items-center">
     <div class="w-full lg:w-1/2 order-2 lg:order-1 flex flex-col gap-8">
         <div class="flex flex-col gap-4">
             <span
                 class="bg-secondary text-black self-start px-4 py-1 border-2 border-black font-bold uppercase tracking-widest text-sm">Informatics Education Lecturer</span>
             <h1 class="text-6xl md:text-6xl font-black leading-none tracking-tighter uppercase">
-                Arif Setiawan <br />
+                <?php echo esc_html( get_bloginfo( 'name' ) ? get_bloginfo( 'name' ) : 'Arif Setiawan' ); ?> <br />
             </h1>
             <p class="text-xl md:text-2xl font-bold border-l-8 border-primary pl-6 mt-4">
                 "Empowering students through innovative educational technology. Bridging technical excellence with pedagogical impact at Universitas Muhammadiyah Surakarta."
@@ -21,9 +19,9 @@
             <div class="absolute inset-0 bg-secondary translate-x-4 translate-y-4 border-4 border-black">
             </div>
             <div class="relative border-4 border-black bg-white aspect-[4/5] overflow-hidden">
-                <img alt="{{ profile.name }} Portrait"
+                <img alt="Portrait"
                     class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
-                    src="{% static 'assets/profile.jpeg' %}" />
+                    src="<?php echo get_template_directory_uri(); ?>/assets/profile.jpeg" />
             </div>
         </div>
     </div>
@@ -66,6 +64,7 @@
         </div>
     </div>
 </section>
+
 <section class="mt-32" id="publications">
     <div class="flex items-center gap-4 mb-12">
         <div class="h-1 flex-1 bg-black"></div>
@@ -73,26 +72,48 @@
             Publications</h2>
     </div>
     <div class="flex flex-col gap-4">
-        {% for pub in publications %}
+        <?php
+        $pub_args = array(
+            'post_type' => 'publication',
+            'posts_per_page' => 5,
+        );
+        $pub_query = new WP_Query( $pub_args );
+
+        if ( $pub_query->have_posts() ) :
+            $counter = 1;
+            while ( $pub_query->have_posts() ) : $pub_query->the_post();
+                $journal = get_post_meta( get_the_ID(), 'journal', true );
+                $year = get_post_meta( get_the_ID(), 'year', true );
+                $link = get_post_meta( get_the_ID(), 'link', true );
+                if ( ! $link ) {
+                    $link = '#';
+                }
+        ?>
         <div
             class="neo-card bg-white p-6 flex flex-col md:flex-row justify-between items-start md:items-center gap-4 group">
             <div class="flex gap-6 items-center">
-                <span class="text-4xl font-black text-zinc-300 group-hover:text-primary transition-colors">{{ forloop.counter|stringformat:"02d" }}</span>
+                <span class="text-4xl font-black text-zinc-300 group-hover:text-primary transition-colors"><?php echo sprintf('%02d', $counter); ?></span>
                 <div>
-                    <h4 class="text-xl font-black uppercase">{{ pub.title }}</h4>
-                    <p class="font-bold text-zinc-600">{{ pub.journal }}, {{ pub.year }}</p>
+                    <h4 class="text-xl font-black uppercase"><?php the_title(); ?></h4>
+                    <p class="font-bold text-zinc-600"><?php echo esc_html( $journal ); ?>, <?php echo esc_html( $year ); ?></p>
                 </div>
             </div>
-            <a href="{% if pub.link %}{{ pub.link }}{% else %}#{% endif %}"
+            <a href="<?php echo esc_url( $link ); ?>"
                 class="neo-btn bg-black text-white px-6 py-2 font-black uppercase text-sm tracking-widest whitespace-nowrap">
                 Read Paper
             </a>
         </div>
-        {% empty %}
+        <?php
+                $counter++;
+            endwhile;
+            wp_reset_postdata();
+        else :
+        ?>
         <p class="text-xl font-bold">No publications found.</p>
-        {% endfor %}
+        <?php endif; ?>
     </div>
 </section>
+
 <section class="mt-32 mb-20" id="blog">
     <div class="flex items-center gap-4 mb-12">
         <h2
@@ -101,27 +122,47 @@
         <div class="h-1 flex-1 bg-black"></div>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {% for post in posts|slice:":3" %}
-        <a href="/blog/{{ post.slug }}/" class="neo-card bg-white group cursor-pointer block">
+        <?php
+        $blog_args = array(
+            'post_type' => 'post',
+            'posts_per_page' => 3,
+        );
+        $blog_query = new WP_Query( $blog_args );
+
+        if ( $blog_query->have_posts() ) :
+            while ( $blog_query->have_posts() ) : $blog_query->the_post();
+                $categories = get_the_category();
+                $category_name = ! empty( $categories ) ? esc_html( $categories[0]->name ) : 'Uncategorized';
+                $thumbnail_url = get_the_post_thumbnail_url( get_the_ID(), 'large' );
+                if ( ! $thumbnail_url ) {
+                    $thumbnail_url = 'https://placehold.co/600x400/e5e5e5/666666?text=No+Image';
+                }
+        ?>
+        <a href="<?php the_permalink(); ?>" class="neo-card bg-white group cursor-pointer block">
             <div class="aspect-video border-b-4 border-black overflow-hidden">
-                <img alt="{{ post.title }}"
+                <img alt="<?php the_title_attribute(); ?>"
                     loading="lazy"
                     class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all"
-                    src="{% if post.image %}{{ post.image.url }}{% else %}https://placehold.co/600x400/e5e5e5/666666?text=No+Image{% endif %}" />
+                    src="<?php echo esc_url( $thumbnail_url ); ?>" />
             </div>
             <div class="p-6">
                 <div class="flex gap-2 mb-4">
-                    <span class="bg-secondary border-2 border-black px-2 py-0.5 text-xs font-black uppercase">{{ post.category }}</span>
+                    <span class="bg-secondary border-2 border-black px-2 py-0.5 text-xs font-black uppercase"><?php echo $category_name; ?></span>
                 </div>
                 <h3 class="text-2xl font-black uppercase mb-4 leading-none group-hover:text-primary transition-colors">
-                    {{ post.title }}</h3>
-                <p class="font-medium text-zinc-700 mb-6">{{ post.summary|truncatewords:20|safe }}</p>
+                    <?php the_title(); ?></h3>
+                <p class="font-medium text-zinc-700 mb-6"><?php echo wp_trim_words( get_the_excerpt(), 20, '...' ); ?></p>
                 <span
                     class="font-black uppercase text-sm underline decoration-2 underline-offset-4 group-hover:text-primary">Read
                     More →</span>
             </div>
         </a>
-        {% endfor %}
+        <?php
+            endwhile;
+            wp_reset_postdata();
+        endif;
+        ?>
     </div>
-</section>pen
-{% endblock %}
+</section>
+
+<?php get_footer(); ?>
